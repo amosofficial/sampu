@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Playlist Link</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <a href="#" id="playlist-link">
+        <img src="your-image.jpg" alt="Playlist Cover">
+    </a>
+    <div id="playlist-content">
+        <!-- Your playlist content goes here -->
+    </div>
+    <script src="script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

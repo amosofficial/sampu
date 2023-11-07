@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>AFRICANTO</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+  text-align: center;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuU_Fze6R3BoaGLUwGq-SakhJ2BEgtffdKZA&usqp=CAU');
+}
+header {
+    background-color: #333; /* Adjust the background color to match your app's theme */
+    color: #fff; /* Text color */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+  
+}
+
+/* Style the logo and app name */
+.logo img {
+    width: 40px; /* Adjust the logo size as needed */
+    height: 40px;
+    margin-right: 10px;
+}
+
+.app-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Style the navigation links */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff; /* Link color */
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Hover effect for navigation links */
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.music-player {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding-left: 30px;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+audio {
+    width: 100%;
+}
+
+#play-pause {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#play-pause:hover {
+    background-color: #0056b3;
+}
+footer{
+  background-color:grey;
+  width:100%;
+  height:70px;
+}
+.flex-container {
+    display: flex;
+}
+
+.flex-item {
+    width: 5cm;
+    height: 5cm;
+    background-color: #0074d9;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+#box{
+    width: auto;
+    height: 100%;
+}
+#bigt{
+  width: auto; 
+  height:100px; 
+  border-radius: 20px;
+}
+#top{
+    width: 100%;
+    height: 500px; 
+    border-radius: 20px; 
+}
+       /* Add styles for your link and image */
+       #playlist-link {
+    text-decoration: none;
+    display: inline-block;
+    margin: 20px;
+}
+
+#playlist-link img {
+    width: 200px; /* Adjust the size as needed */
+    border: 2px solid #000; /* Add a border or other styles */
+}
+
+#playlist-content {
+    display: none; /* Hide the playlist content initially */
+}
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+    max-width: 100%;
+}
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    
+    <script>
+            
+       let slideIndex = 0;
+
+function showSlides() {
+    let slides = document.getElementsByClassName("mySlides");
+    
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    
+    slideIndex++;
+    
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+    
+    slides[slideIndex - 1].style.display = "block";
+    
+    setTimeout(showSlides, 2000); // Change image every 2 seconds (2000 milliseconds)
+}
+
+showSlides(); 
+
+const music = document.getElementById('music');
+const playPauseButton = document.getElementById('play-pause');
+
+let isPlaying = false;
+
+playPauseButton.addEventListener('click', function () {
+    if (isPlaying) {
+        music.pause();
+        playPauseButton.textContent = 'Play';
+    } else {
+        music.play();
+        playPauseButton.textContent = 'Pause';
+    }
+    isPlaying = !isPlaying;
+});
+
+
+    </script>
+   <header>
+        <nav>
+            <div class="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScm4FGl7WDxFgupJYuzaaE2dSD37iQNtQ_CQ&usqp=CAU">
+                <span class="app-name">AFRICANTO.COM</span>
+            </div>
+            <ul class="nav-links">
+                
+                
+            </ul>
+        </nav>
+    </header>
+    
+    </div>
+    <div >
+        <div class="slideshow-container">
+            <img class="mySlides" src="data:image/png;base64,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" alt="Image 1">
+            <img class="mySlides" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfUAQF7SJeGtdyei9diduhNr7qiVxFYaBlXg&usqp=CAU" alt="Image 2">
+            <img class="mySlides" src="data:image/jpeg;base64,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" alt="Image 3">
+        </div>
+      
+  
+ <br>
+    <div class="music-player">
+        <h3>Alan walker - on my way</h3>
+        <audio id="music" src="web playlist/Alan Walker, Sabrina Carpenter & Farruko  - On My Way.mp3" controls></audio>
+        <button id="play-pause">Play</button>
+    </div>
+  <br>
+  <div class="music-player">
+        <h3>Alan walker - lily</h3>
+        <audio id="music" src="web playlist/Alan_Walker,_K-391_&_Emelie_Hollow_-_Lily_(Lyrics)(128k).mp3" controls></audio>
+        <button id="play-pause">Play</button>
+    </div>
+  <br>
+  <div class="music-player">
+<h3>Alan walker - play</h3>
+        <audio id="music" src="web playlist/Alan_Walker,_K-391_‒_Play_(Lyrics)_ft._Tungevaag,_Mangoo(256k).mp3" controls></audio>
+        <button id="play-pause">Play</button>
+    </div>
+   <br>
+  <div class="music-player">
+    <h3>Alan walker- darkside</h3>
+        
+        <audio id="music" src="web playlist/Alan_Walker_%E2%80%92_Darkside__Lyrics__ft._Au_Ra___Tomine_Harket(256k).mp3" controls></audio>
+        <button id="play-pause">Play</button>
+    </div>
+   <br>
+  <div class="music-player">
+        <h3>Lost control- Alan walker</h3>
+        <audio id="music" src="web playlist/Alan_Walker_‒_Lost_Control_(Lyrics)_ft._Sorana(256k).mp3" controls></audio>
+        <button id="play-pause">Play</button>
+    </div>
+    <br>
+    <div class="music-player">
+        <h3>lost control- Alan walker</h3>
+        <audio id="music" src="web playlist/Alan_Walker_‒_Lost_Control_(Lyrics)_ft._Sorana(256k).mp3" controls></audio>
+        <button id="play-pause">Play</button>
+    </div>
+    <br>
+    <div class="music-player">
+        <h3>wishing well-juice WRLD</h3>
+        <audio id="music" src="web playlist/Juice_WRLD_-_Wishing_Well_(Official_Music_Video)(256k).mp3" controls></audio>
+        <button id="play-pause">Play</button>
+    </div> <br>
+    <div class="music-player">
+        <h3>Dough-Key glock</h3>
+        <audio id="music" src="web playlist/Key-Glock-Dough-Audio_TKOOZOwpq0Y.mp3" controls></audio>
+        <button id="play-pause">Play</button>
+    </div>
+    <br>
+    <div class="music-player">
+        <h3>tell me you love me- juice WRLD</h3>
+        <audio id="music" src="web playlist/juice_wrld_tell_me_u_luv_me_ft._trippie_redd_dir._by_colebennett_mp3_53488.mp3" controls></audio>
+        <button id="play-pause">Play</button>
+    </div>
+    <br>
+    <div class="music-player">
+        <H3>keed-ride the wave</H3>
+        <audio id="music" src="web playlist/lil_keed_ride_the_wave_official_video_mp3_59595.mp3" controls></audio>
+        <button id="play-pause">Play</button>
+    </div>
+    <br>
+    <div class="music-player">
+        <h3>Dough-key Glock</h3>
+        <audio id="music" src="web playlist/Key-Glock-Dough-Audio_TKOOZOwpq0Y.mp3" controls></audio>
+        <button id="play-pause">Play</button>
+    </div>
+    <br>
+    <div class="music-player">
+        <h3>Juice WRLD- HEART BREAK</h3>
+        <audio id="music" src="web playlist/Juice-WRLD-Mr-Heartbreak_Kj7Gyzj_Cbc.mp3" controls></audio>
+        <button id="play-pause">Play</button>
+    </div>
+    <br>
+    <div class="music-player">
+        <H3>SMILE- THE WEEKEND</H3>
+        <audio id="music" src="web playlist/Juice WRLD _ The Weeknd - Smile (Official Lyric Video)(MP3_70K)_1.mp3" controls></audio>
+        <button id="play-pause">Play</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+  <br>
+  <footer>
+    @copyright2023
+  </footer>
+</html>
